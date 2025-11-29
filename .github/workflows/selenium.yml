@@ -1,0 +1,22 @@
+name: Selenium Tests (Edge & Firefox)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  selenium:
+    runs-on: windows-latest   # Edge y Firefox ya vienen instalados
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Run Selenium tests
+        run: mvn -B test
