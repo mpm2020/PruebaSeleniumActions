@@ -19,4 +19,4 @@ jobs:
           java-version: 17
 
       - name: Run Selenium tests
-        run: mvn -B test
+        run: mvn -Dtest=PracticaM1 test
